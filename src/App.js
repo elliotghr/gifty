@@ -1,4 +1,5 @@
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import Detail from "./components/Detail";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 
@@ -6,20 +7,17 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <NavLink to={"/"}>
+          <h1>Gif</h1>
+        </NavLink>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route
-            path="/gifs/:keyword"
+            path="/search/:keyword"
             element={<SearchPage></SearchPage>}
           ></Route>
+          <Route path="/gif/:id" element={<Detail></Detail>}></Route>
         </Routes>
-        <article>
-          <nav>
-            <NavLink to="/gifs/spiderman">Spiderman</NavLink>
-            <NavLink to="/gifs/oasis">oasis</NavLink>
-            <NavLink to="/gifs/Javascript">Javascript</NavLink>
-          </nav>
-        </article>
       </BrowserRouter>
     </div>
   );
