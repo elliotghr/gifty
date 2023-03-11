@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import ListOfGifs from "../components/ListOfGifs";
-import fetchGif from "../services/fetchGif";
+import useGif from "../hook/useGif";
 
 const SearchPage = () => {
-  const [gifs, setGifs] = useState([]);
   let params = useParams();
   const { keyword } = params;
 
-  useEffect(() => {
-    fetchGif({ keyword }).then((res) => setGifs(res));
-  }, [keyword]);
+  const { gifs } = useGif({ keyword });
 
   return (
     <div>

@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ListOfGifs from "../components/ListOfGifs";
 import SearchTrends from "../components/SearchTrends";
-import fetchGif from "../services/fetchGif";
+import useGif from "../hook/useGif";
 
 const Home = () => {
-  const [gifs, setGifs] = useState([]);
-  const [keyword, setKeyword] = useState("");
+  const ls = localStorage.getItem("keyword");
+  const [keyword, setKeyword] = useState(null);
   const navigate = useNavigate();
-  useEffect(() => {
-    fetchGif().then((res) => setGifs(res));
-  }, []);
+
+  const { gifs } = useGif();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +27,7 @@ const Home = () => {
           onChange={handleChange}
         ></input>
       </form>
+      {ls ? <h2>Última busqueda: {ls}</h2> : <h2>Bienvenido a Gifty</h2>}
       <ListOfGifs gifs={gifs}></ListOfGifs>
       <SearchTrends></SearchTrends>
     </div>

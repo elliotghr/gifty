@@ -6,7 +6,7 @@ const Category = ({ title, data }) => {
       <h2>{title}</h2>
       <ul>
         {data.map((el) => (
-          <li>
+          <li key={el}>
             <a href={`/search/${el}`}>{el}</a>
           </li>
         ))}
