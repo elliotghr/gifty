@@ -10,8 +10,10 @@ const fetchGifResponse = (response) => {
   return gifs;
 };
 
-const fetchGif = ({ keywordToUse = "cookie monster" } = {}) => {
-  return fetch(`${API_URL}/gifs/search?api_key=${API_KEY}&q=${keywordToUse}&limit=5`)
+const fetchGif = ({ keywordToUse = "cookie monster", limit = 10 } = {}) => {
+  return fetch(
+    `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keywordToUse}&limit=${limit}`
+  )
     .then((res) => res.json())
     .then((response) => fetchGifResponse(response));
 };

@@ -5,10 +5,10 @@ import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <BrowserRouter>
         <NavLink to={"/"}>
-          <h1>Gif</h1>
+          <h1 className="mb-2">Gifty</h1>
         </NavLink>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>

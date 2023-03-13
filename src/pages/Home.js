@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ListOfGifs from "../components/ListOfGifs";
 import SearchTrends from "../components/SearchTrends";
 import useGif from "../hook/useGif";
+import "./Home.css";
 
 const Home = () => {
   const ls = localStorage.getItem("keyword");
@@ -20,16 +21,21 @@ const Home = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Busca tu gif aqui"
-          onChange={handleChange}
-        ></input>
-      </form>
+      <article className="form-container mb-5">
+        <form onSubmit={handleSubmit}>
+          <label>Busca un gif</label>
+          <input
+            type="search"
+            placeholder="Escribe aqui..."
+            onChange={handleChange}
+          ></input>
+        </form>
+      </article>
       {ls ? <h2>Última busqueda: {ls}</h2> : <h2>Bienvenido a Gifty</h2>}
-      <ListOfGifs gifs={gifs}></ListOfGifs>
-      <SearchTrends></SearchTrends>
+        <ListOfGifs gifs={gifs}></ListOfGifs>
+      <article className="trends-container">
+        <SearchTrends></SearchTrends>
+      </article>
     </div>
   );
 };

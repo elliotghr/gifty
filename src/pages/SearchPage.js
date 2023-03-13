@@ -11,6 +11,7 @@ const SearchPage = () => {
 
   return (
     <div>
+      <h2>Resultados de la busqueda: {keyword}</h2>
       <ListOfGifs gifs={gifs}></ListOfGifs>
     </div>
   );
