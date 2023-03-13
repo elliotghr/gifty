@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { GifContext } from "../context/GifContext";
+import Gif from "./Gif";
 
 const Detail = () => {
-  return (
-    <div>Detail</div>
-  )
-}
+  let { id } = useParams();
+  const { gifs } = useContext(GifContext);
+  const getGif = gifs.filter((el) => el.id === id)[0];
+  console.log(getGif);
 
-export default Detail
+  return (
+    <div>
+      <Gif id={getGif.id} title={getGif.title} url={getGif.url}></Gif>
+    </div>
+  );
+};
+
+export default Detail;
