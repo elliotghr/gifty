@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const useIntersection = () => {
+const useIntersection = ({ once = true } = {}) => {
   const [isNearVisible, setIsNearVisible] = useState(null);
   const target = useRef();
 
@@ -11,14 +11,15 @@ const useIntersection = () => {
     function nearVisible(entries, observer) {
       const el = entries[0];
       if (el.isIntersecting) {
-        console.log("object");
         setIsNearVisible(true);
-        observer.disconnect();
+        once && observer.disconnect();
+      } else {
+        !once && setIsNearVisible(false);
       }
     }
     let observer = new IntersectionObserver(nearVisible, options);
     observer.observe(target.current);
-  }, [target]);
+  }, [target, once]);
   return {
     target,
     isNearVisible,
