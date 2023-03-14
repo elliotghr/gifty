@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Category = ({ title, data }) => {
   return (
@@ -7,7 +8,7 @@ const Category = ({ title, data }) => {
       <ul>
         {data.map((el) => (
           <li key={el}>
-            <a href={`/search/${el}`}>{el}</a>
+            <NavLink to={`/search/${el}`}>{el}</NavLink>
           </li>
         ))}
       </ul>

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LazyTrends from "../components/LazyTrends";
 import ListOfGifs from "../components/ListOfGifs";
-import SearchTrends from "../components/SearchTrends";
 import useGif from "../hook/useGif";
 import "./Home.css";
 
 const Home = () => {
-  const ls = localStorage.getItem("keyword");
-  const [keyword, setKeyword] = useState(null);
   const navigate = useNavigate();
+  const lsKeyword = localStorage.getItem("keyword");
+  const [keyword, setKeyword] = useState(null);
 
   const { gifs } = useGif();
 
@@ -31,10 +31,14 @@ const Home = () => {
           ></input>
         </form>
       </article>
-      {ls ? <h2>Última busqueda: {ls}</h2> : <h2>Bienvenido a Gifty</h2>}
-        <ListOfGifs gifs={gifs}></ListOfGifs>
+      {lsKeyword ? (
+        <h2>Última busqueda: {lsKeyword}</h2>
+      ) : (
+        <h2>Bienvenido a Gifty</h2>
+      )}
+      <ListOfGifs gifs={gifs}></ListOfGifs>
       <article className="trends-container">
-        <SearchTrends></SearchTrends>
+        <LazyTrends></LazyTrends>
       </article>
     </div>
   );

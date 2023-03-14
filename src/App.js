@@ -1,6 +1,7 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import Detail from "./components/Detail";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavGif from "./components/NavGif";
 import { GifProvider } from "./context/GifContext";
+import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 
@@ -9,9 +10,7 @@ function App() {
     <div className="main">
       <GifProvider>
         <BrowserRouter>
-          <NavLink to="/">
-            <h1 className="mb-2">Gifty</h1>
-          </NavLink>
+          <NavGif></NavGif>
           <Routes>
             <Route path="/" element={<Home></Home>}></Route>
             <Route

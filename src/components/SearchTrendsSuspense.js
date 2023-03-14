@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import getTrendingSearch from "../services/getTrendingSearch";
 import Category from "./Category";
 
-const SearchTrends = () => {
+const SearchTrendsSuspense = () => {
   const [trend, setTrend] = useState([]);
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const SearchTrends = () => {
   return <Category title={"Tendencias"} data={trend}></Category>;
 };
 
-export default SearchTrends;
+export default SearchTrendsSuspense;
