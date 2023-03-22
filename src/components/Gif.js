@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import "./Gif.css";
 const Gif = ({ id, title, url }) => {
@@ -12,4 +12,4 @@ const Gif = ({ id, title, url }) => {
   );
 };
 
-export default Gif;
+export default memo(Gif);

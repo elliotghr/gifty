@@ -1,16 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { GifContext } from "../context/GifContext";
 import Gif from "../components/Gif";
+import Spinner from "../components/Spinner";
+import useSingleGif from "../hook/useSingleGif";
 
 const Detail = () => {
-  let { id } = useParams();
-  const { gifs } = useContext(GifContext);
-  const getGif = gifs.filter((el) => el.id === id)[0];
+  let { id: key } = useParams();
+  const { gif, loading } = useSingleGif(key);
 
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
+
+  if (!gif) return;
   return (
     <div>
-      <Gif id={getGif.id} title={getGif.title} url={getGif.url}></Gif>
+      <Gif id={gif.id} title={gif.title} url={gif.url}></Gif>
     </div>
   );
 };
