@@ -1,12 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Nav.css";
 
 const NavGif = () => {
   return (
-    <NavLink to="/">
-    <h1 className="mb-2">Gifty</h1>
-  </NavLink>
-  )
-}
+    <div className="nav-container">
+      <NavLink to="/">
+        <h1>Gifty</h1>
+      </NavLink>
+    </div>
+  );
+};
 
-export default NavGif
+export default NavGif;

@@ -1,3 +1,6 @@
+.form-container{
+  max-width: var(--max-width);
+}
 .gifs-container {
   height: 100%;
   min-height: 100vh;
@@ -5,15 +8,9 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
-.gifs-container img {
-  width: 100%;
+.trends-container {
+  height: 30vh;
 }
-.gifs-container .title {
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .trends-container ul {
   margin: 0;
   padding: 0;
@@ -23,23 +20,29 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .trends-container a {
   text-decoration: none;
   color: aquamarine;
   font-family: sans-serif;
 }
+.trends-container a:hover {
+  color: rgb(106, 138, 128);
+}
 input {
   position: relative;
   bottom: 1px;
-  width: 50%;
+  width: 30%;
+  min-width: 200px;
   padding: calc(1rem + 1px);
   border-radius: 0 1rem 1rem 0;
   border: 0;
 }
 label {
+  display: inline-block;
   padding: 1rem;
+  /* width: 20%; */
   border-right: 0;
   color: whitesmoke;
   background-color: blue;

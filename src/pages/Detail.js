@@ -1,4 +1,5 @@
 import React from "react";
+import "./Detail.css";
 import { useParams } from "react-router-dom";
 import Gif from "../components/Gif";
 import Spinner from "../components/Spinner";
@@ -14,7 +15,7 @@ const Detail = () => {
 
   if (!gif) return;
   return (
-    <div>
+    <div className="detail-container">
       <Gif id={gif.id} title={gif.title} url={gif.url}></Gif>
     </div>
   );
