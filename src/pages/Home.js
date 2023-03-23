@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div>
-      <article className="form-container mb-5">
+      <article className="form-container mb-2">
         <Form></Form>
       </article>
       {lsKeyword ? (

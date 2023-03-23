@@ -1,15 +1,14 @@
 import React, { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Form from "../components/Form";
 import ListOfGifs from "../components/ListOfGifs";
 import useGif from "../hook/useGif";
 import useIntersection from "../hook/useIntersection";
 
 const SearchPage = () => {
   let params = useParams();
-  const { keyword } = params;
-
-  const { gifs, setPage } = useGif({ keyword });
-
+  const { keyword, rating } = params;
+  const { gifs, setPage } = useGif({ keyword, rating });
   const { target, isNearVisible } = useIntersection({ once: false });
 
   const getNextGifs = useCallback(
@@ -23,6 +22,9 @@ const SearchPage = () => {
 
   return (
     <div>
+      <article className="form-container mb-5">
+        <Form initialKeyword={keyword} initialRating={rating}></Form>
+      </article>
       <h2>Resultados de la busqueda: {keyword}</h2>
       <ListOfGifs gifs={gifs}></ListOfGifs>
       <div ref={target}></div>

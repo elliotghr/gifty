@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home></Home>}></Route>
             <Route
-              path="/search/:keyword"
+              path="/search/:keyword/:rating?"
               element={<SearchPage></SearchPage>}
             ></Route>
             <Route path="/gif/:id" element={<Detail></Detail>}></Route>

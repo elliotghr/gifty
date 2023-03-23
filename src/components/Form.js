@@ -1,24 +1,38 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Form = () => {
-  const [keyword, setKeyword] = useState(null);
+const RATINGS = ["g", "pg", "pg-13", "r"];
+
+const Form = ({ initialKeyword = "", initialRating }) => {
+  const [keyword, setKeyword] = useState(initialKeyword);
+  const [rating, setRating] = useState(initialRating);
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate(`/search/${keyword}`);
-  };
+
   const handleChange = (e) => {
     setKeyword(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${keyword}/${rating}`);
+  };
+
+  const handleChangeRating = (e) => {
+    setRating(e.target.value);
+  };
   return (
     <form onSubmit={handleSubmit}>
-      <label>Busca un gif</label>
+      <label>Buscar</label>
       <input
         type="search"
-        placeholder="Escribe aqui..."
+        placeholder="Escribe tu gif aqui..."
         onChange={handleChange}
+        value={keyword}
       ></input>
+      <select onChange={handleChangeRating} value={rating}>
+        {RATINGS.map((el) => (
+          <option key={el}>{el}</option>
+        ))}
+      </select>
     </form>
   );
 };
