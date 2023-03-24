@@ -25,7 +25,10 @@ const SearchPage = () => {
       <article className="form-container mb-5">
         <Form initialKeyword={keyword} initialRating={rating}></Form>
       </article>
-      <h2>Resultados de la busqueda: {keyword}</h2>
+      <h2>
+        Resultados de la busqueda: '{keyword}'{" "}
+        {rating ? `con clasificación '${rating}'` : null}
+      </h2>
       <ListOfGifs gifs={gifs}></ListOfGifs>
       <div ref={target}></div>
       {/* <button onClick={getNextGifs} className="intersection">

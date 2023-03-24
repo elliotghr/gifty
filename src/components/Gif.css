@@ -4,6 +4,9 @@ img {
   display: block;
   margin: 0 auto;
 }
+img:hover {
+  outline: 10px solid rgba(0, 0, 255, 0.651);
+}
 .title {
   color: rgb(171, 217, 255);
   font-family: sans-serif;

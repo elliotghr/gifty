@@ -1,4 +1,4 @@
-.form-container{
+.form-container {
   max-width: var(--max-width);
 }
 .gifs-container {
@@ -9,7 +9,7 @@
   gap: 1rem;
 }
 .trends-container {
-  height: 30vh;
+  min-height: 30vh;
 }
 .trends-container ul {
   margin: 0;
@@ -30,21 +30,33 @@
 .trends-container a:hover {
   color: rgb(106, 138, 128);
 }
-input {
+input,
+select {
   position: relative;
-  bottom: 1px;
-  width: 30%;
-  min-width: 200px;
-  padding: calc(1rem + 1px);
-  border-radius: 0 1rem 1rem 0;
+  padding: 1rem;
   border: 0;
 }
-label {
-  display: inline-block;
-  padding: 1rem;
-  /* width: 20%; */
-  border-right: 0;
-  color: whitesmoke;
+.input-buscar {
+  width: 20%;
+  min-width: 70px;
   background-color: blue;
-  border-radius: 10% 0 0 10%;
+  color: whitesmoke;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.input-buscar:hover {
+  background-color: rgb(17, 17, 104);
+  transition: all 0.2s ease-in-out;
+}
+.input-select {
+  border-left: 2px solid gray;
+  height: 3rem;
+  top: 1px;
+  border-radius: 0 1rem 1rem 0;
+}
+.input-text {
+  width: 30%;
+  min-width: 150px;
+  background-color: whitesmoke;
+  color: gray;
 }

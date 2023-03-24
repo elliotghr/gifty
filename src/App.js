@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Error404 from "./components/Error404";
 import NavGif from "./components/NavGif";
 import { GifProvider } from "./context/GifContext";
 import Detail from "./pages/Detail";
@@ -18,6 +19,7 @@ function App() {
               element={<SearchPage></SearchPage>}
             ></Route>
             <Route path="/gif/:id" element={<Detail></Detail>}></Route>
+            <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>
         </BrowserRouter>
       </GifProvider>
