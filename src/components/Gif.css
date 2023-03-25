@@ -1,14 +1,25 @@
 img {
   width: 100%;
-  max-width: 500px;
+  height: 200px;
   display: block;
   margin: 0 auto;
 }
 img:hover {
-  outline: 10px solid rgba(0, 0, 255, 0.651);
+  outline: 6px solid rgba(0, 0, 255, 0.651);
+}
+.gif {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  height: 200px;
 }
 .title {
-  color: rgb(171, 217, 255);
+  position: absolute;
+  bottom: 0;
+  font-size: .8rem;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.568);
   font-family: sans-serif;
   text-align: center;
 }

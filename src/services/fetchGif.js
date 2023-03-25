@@ -12,7 +12,7 @@ const fetchGifResponse = (response) => {
 
 const fetchGif = ({
   keywordToUse = "cookie monster",
-  limit = 5,
+  limit = 10,
   rating = "g",
   page = 0,
 } = {}) => {

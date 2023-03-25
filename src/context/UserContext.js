@@ -4,7 +4,6 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [jwt, setJwt] = useState(null);
-
   const data = {
     jwt,
     setJwt,
