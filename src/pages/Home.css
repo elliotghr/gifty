@@ -8,6 +8,10 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
+.form-container{
+  display: block;
+  text-align: center;
+}
 .trends-container {
   min-height: 30vh;
 }

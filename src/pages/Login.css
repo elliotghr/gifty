@@ -1,0 +1,19 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container button {
+  width: 5rem;
+  padding: 0.4rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  transition: all .3s ease-in-out;
+}
+.form-container button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: rgb(231, 231, 231);
+  transition: all .3s ease-in-out;
+}

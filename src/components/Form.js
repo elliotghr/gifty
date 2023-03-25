@@ -7,7 +7,7 @@ const RATINGS = ["g", "pg", "pg-13", "r"];
 const Form = ({ initialKeyword = "", initialRating = "g" }) => {
   const navigate = useNavigate();
 
-  const { keyword, times, rating, updateKeyword, updateRating } =
+  const { keyword, rating, updateKeyword, updateRating } =
     useFormReducer({ initialKeyword, initialRating });
 
   const handleChange = (e) => {
@@ -50,7 +50,7 @@ const Form = ({ initialKeyword = "", initialRating = "g" }) => {
           <option key={el}>{el}</option>
         ))}
       </select>
-      <small style={{ color: "whitesmoke" }}>{times}</small>
+      {/* <small style={{ color: "whitesmoke" }}>{times}</small> */}
     </form>
   );
 };

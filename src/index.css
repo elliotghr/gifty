@@ -112,3 +112,7 @@ h2 {
 .mb-5 {
   margin-bottom: 5rem;
 }
+body{
+  padding: 0 1rem;
+  background-color: #282c34;
+}

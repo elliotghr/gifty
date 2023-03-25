@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import useSingleGif from "../hook/useSingleGif";
 import "./Error404.css";
-import Spinner from "./Spinner";
+import Spinner from "../components/Spinner";
 const Error404 = () => {
   const { gif, loading } = useSingleGif("14uQ3cOFteDaU");
 
