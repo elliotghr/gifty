@@ -1,19 +1,22 @@
-.form-container {
+.form-login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.form-container button {
+.form-login-container button {
   width: 5rem;
   padding: 0.4rem;
   margin-top: 1rem;
   border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.form-container button:hover {
+.form-login-container button:hover {
   cursor: pointer;
   opacity: 0.8;
   background-color: rgb(231, 231, 231);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+h2 {
+  text-align: center;
 }

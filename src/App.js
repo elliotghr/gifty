@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Login from "./pages/Login";
+import Login from "./pages/LoginPage";
 import { UserProvider } from "./context/UserContext";
 
 function App() {

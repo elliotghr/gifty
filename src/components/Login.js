@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalUser } from "../hook/useGlobalUser";
-import "./Login.css"
+import "../pages/Login.css";
 
 const initialForm = {
   username: "",
@@ -30,8 +30,7 @@ const Login = () => {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <h2>Inicia Sesión</h2>
+    <form className="form-login-container" onSubmit={handleSubmit}>
       <input
         placeholder="username"
         onChange={handleChange}
