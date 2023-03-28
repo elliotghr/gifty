@@ -15,3 +15,12 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+.form-login-container label {
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+.form-login-container input {
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}

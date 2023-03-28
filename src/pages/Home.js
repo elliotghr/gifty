@@ -14,7 +14,7 @@ const Home = () => {
         <Form></Form>
       </article>
       {lsKeyword ? (
-        <h2>Última busqueda: {lsKeyword}</h2>
+        <h2> 🔎 Última busqueda: {lsKeyword}</h2>
       ) : (
         <h2>Bienvenido a Gifty</h2>
       )}

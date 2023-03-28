@@ -46,9 +46,6 @@ a {
   transition: all 0.5s ease-out;
 }
 
-a:hover {
-  opacity: 0.75;
-}
 h1 {
   margin: 0;
   font-size: 2rem;
@@ -105,6 +102,10 @@ h2 {
   color: whitesmoke;
   margin: 1rem 0;
 }
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 /* ********* Utilities ********* */
 .mb-2 {
   margin-bottom: 2rem;
@@ -112,7 +113,22 @@ h2 {
 .mb-5 {
   margin-bottom: 5rem;
 }
-body{
+body {
   padding: 0 1rem;
   background-color: #282c34;
+}
+.btn {
+  width: 5rem;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  background-color: blueviolet;
+  color: whitesmoke;
+  border: none;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
 }

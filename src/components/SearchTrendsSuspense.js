@@ -9,7 +9,7 @@ const SearchTrendsSuspense = () => {
     getTrendingSearch().then((res) => setTrend(res));
   }, []);
 
-  return <Category title={"Tendencias"} data={trend}></Category>;
+  return <Category title={"📈 Tendencias"} data={trend}></Category>;
 };
 
 export default SearchTrendsSuspense;

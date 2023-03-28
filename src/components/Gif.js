@@ -5,7 +5,7 @@ import "./Gif.css";
 const Gif = ({ id, title, url }) => {
   
   return (
-    <div className="gif" key={id}>
+    <div className="gif-container" key={id}>
       <Fav></Fav>
       <p className="title">{title}</p>
       <NavLink to={`/gif/${id}`}>

@@ -11,11 +11,14 @@ const Fav = () => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-
     alert("hi");
   };
 
   const handleClose = () => {
+    setModal(false);
+  };
+
+  const handleLogin = () => {
     setModal(false);
   };
   return (
@@ -27,7 +30,8 @@ const Fav = () => {
       </button>
       {modal && (
         <Modal onClose={handleClose}>
-          <Login></Login>
+          <h2>Inicia sesión</h2>
+          <Login onLogin={handleLogin}></Login>
         </Modal>
       )}
     </>

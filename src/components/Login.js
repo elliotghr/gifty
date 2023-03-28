@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useMatch, useNavigate } from "react-router-dom";
 import { useGlobalUser } from "../hook/useGlobalUser";
-import "../pages/Login.css";
+import "./Login.css";
 
 const initialForm = {
   username: "",
   password: "",
 };
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [form, setForm] = useState(initialForm);
   const navigate = useNavigate();
   const { login, isLoggedIn } = useGlobalUser();
 
+  const match = useMatch("/login");
+
   useEffect(() => {
-    if (isLoggedIn) navigate("/");
-  }, [isLoggedIn, navigate]);
+    if (isLoggedIn && match) navigate("/");
+    if (isLoggedIn  && !match) onLogin();
+  }, [isLoggedIn, navigate, match, onLogin]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,20 +34,22 @@ const Login = () => {
 
   return (
     <form className="form-login-container" onSubmit={handleSubmit}>
+      <label>User name</label>
       <input
-        placeholder="username"
+        placeholder="Introduce tu username"
         onChange={handleChange}
         name="username"
         value={form.username}
       ></input>
+      <label>Password</label>
       <input
         type="password"
-        placeholder="password"
+        placeholder="Escribe aqui tu password"
         onChange={handleChange}
         name="password"
         value={form.password}
       ></input>
-      <button>Login</button>
+      <button className="btn">Login</button>
     </form>
   );
 };

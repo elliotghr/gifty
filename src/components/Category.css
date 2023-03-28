@@ -1,0 +1,18 @@
+.trends-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.trends-content a {
+  color: aquamarine;
+  font-family: sans-serif;
+}
+.trends-content a:hover {
+  color: rgb(106, 138, 128);
+}

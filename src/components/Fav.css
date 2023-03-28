@@ -1,12 +1,18 @@
 .button-fav {
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  z-index: 99999;
-  cursor: cell;
-  border-radius: 50%;
+  width: 2.2rem;
+  height: 1.6rem;
+  right: 0.2rem;
+  top: 0.2rem;
+  z-index: 99;
+  border-radius: 1rem;
   border: none;
-  background-color: rgba(0, 0, 0, 0.308);
+  background-color: rgba(255, 255, 255, 0.575);
+  transition: background-color 0.4s ease-in-out;
+}
+.button-fav:hover {
+  background-color: rgba(255, 255, 255, 0.925);
+  transition: background-color 0.4s ease-in-out;
 }
 .button-fav span {
   color: red;
