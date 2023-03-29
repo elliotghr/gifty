@@ -4,10 +4,12 @@ import Fav from "./Fav";
 import "./Gif.css";
 const Gif = ({ id, title, url }) => {
   return (
-    <div className="gif-container" key={id}>
-      <Fav id={id} title={title} url={url}></Fav>
-      <p className="title">{title}</p>
-      <NavLink to={`/gif/${id}`}>
+    <div className="Gif" key={id}>
+      <div className="Gif-buttons">
+        <Fav id={id} title={title} url={url}></Fav>
+      </div>
+      <NavLink to={`/gif/${id}`} className="Gif-link">
+        <h4>{title}</h4>
         <img src={url} alt={title}></img>
       </NavLink>
     </div>
