@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Form from "../components/Form";
 import LazyTrends from "../components/LazyTrends";
 import ListOfGifs from "../components/ListOfGifs";
@@ -10,6 +11,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Gifty</title>
+      </Helmet>
       <article className="form-container mb-2">
         <Form></Form>
       </article>

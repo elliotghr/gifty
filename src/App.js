@@ -1,15 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Error404 from "./pages/Error404";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { GifProvider } from "./context/GifContext";
+import { UserProvider } from "./context/UserContext";
+import { FavProvider } from "./context/FavsContext";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Error404 from "./pages/Error404";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
 import Login from "./pages/LoginPage";
-import { UserProvider } from "./context/UserContext";
 import Favs from "./pages/Favs";
-import { FavProvider } from "./context/FavsContext";
 
 function App() {
   return (
@@ -17,9 +17,9 @@ function App() {
       <GifProvider>
         <FavProvider>
           <UserProvider>
-            <BrowserRouter>
-              <Nav></Nav>
+            <HashRouter>
               <Header></Header>
+              <Nav></Nav>
               <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route
@@ -31,7 +31,7 @@ function App() {
                 <Route path="/favs" element={<Favs></Favs>}></Route>
                 <Route path="*" element={<Error404></Error404>}></Route>
               </Routes>
-            </BrowserRouter>
+            </HashRouter>
           </UserProvider>
         </FavProvider>
       </GifProvider>

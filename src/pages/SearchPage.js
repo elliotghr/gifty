@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import Form from "../components/Form";
 import ListOfGifs from "../components/ListOfGifs";
@@ -9,6 +10,7 @@ const SearchPage = () => {
   let params = useParams();
   const { keyword, rating } = params;
   const { gifs, setPage } = useGif({ keyword, rating });
+  const length = gifs.length;
   const { target, isNearVisible } = useIntersection({ once: false });
 
   const getNextGifs = useCallback(
@@ -22,6 +24,9 @@ const SearchPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>{`${length} gifs de '${keyword}' || Gifty`}</title>
+      </Helmet>
       <article className="form-container mb-5">
         <Form initialKeyword={keyword} initialRating={rating}></Form>
       </article>

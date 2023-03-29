@@ -4,8 +4,7 @@ import { useGlobalUser } from "../hook/useGlobalUser";
 import "./Nav.css";
 
 const Nav = () => {
-  const { isLoggedIn } = useGlobalUser();
-  const { logout } = useGlobalUser();
+  const { logout, isLoggedIn } = useGlobalUser();
   const navigate = useNavigate();
 
   const match = useMatch("/login");
@@ -25,19 +24,13 @@ const Nav = () => {
     );
   };
 
-  const Fav = ({ isLoggedIn }) => {
-    if (isLoggedIn) {
-      return <NavLink to="/favs">Favs</NavLink>;
-    } else {
-      return null;
-    }
-  };
+  const Fav = isLoggedIn ? <NavLink to="/favs">Favs</NavLink> : null;
 
   const content = match ? null : Logged({ isLoggedIn });
   return (
-    <nav className="gf-header">
-      {Fav({ isLoggedIn })}
+    <nav className="gf-header mb-2">
       {content}
+      {Fav}
     </nav>
   );
 };

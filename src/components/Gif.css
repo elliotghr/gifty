@@ -32,15 +32,21 @@
   width: 100%;
   object-fit: contain;
   vertical-align: top;
+  max-height: 80vh;
 }
 
 .Gif,
 .Gif-link {
   height: 100%;
+  max-height: 80vh;
+  max-width: 800px;
+  /* margin: 0 auto; */
 }
 .Gif-link img {
   height: inherit;
   object-fit: cover;
+  max-height: 80vh;
+  max-width: 800px;
 }
 
 .Gif:nth-child(5n + 1) img {

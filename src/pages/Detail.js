@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Gif from "../components/Gif";
 import Spinner from "../components/Spinner";
 import useSingleGif from "../hook/useSingleGif";
+import { Helmet } from "react-helmet";
 
 const Detail = () => {
   let { id: key } = useParams();
@@ -16,6 +17,9 @@ const Detail = () => {
   if (!gif) return;
   return (
     <div className="detail-container">
+      <Helmet>
+        <title>{`${gif.title} || Gifty`}</title>
+      </Helmet>
       <Gif id={gif.id} title={gif.title} url={gif.url}></Gif>
     </div>
   );
