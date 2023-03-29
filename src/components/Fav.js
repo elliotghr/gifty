@@ -1,17 +1,33 @@
 import React, { useState } from "react";
+import useGlobalFavs from "../hook/useGlobalFavs";
 import { useGlobalUser } from "../hook/useGlobalUser";
 import "./Fav.css";
 import Login from "./Login";
 import Modal from "./Modal";
 
-const Fav = () => {
+const Fav = ({ id, title, url }) => {
   const [modal, setModal] = useState(false);
   const { isLoggedIn } = useGlobalUser();
+  const { favs, saveFav, handleDeleteFav } = useGlobalFavs();
+
+  const isFav = favs.some((el) => el.id === id);
+  const emojiFav = !isFav ? "❤" : "✖";
+
   const handleClick = (e) => {
     if (!isLoggedIn) {
       return setModal(true);
     }
-    alert("hi");
+    if (emojiFav === "❤") {
+      const data = { id, title, url };
+      saveFav({ data });
+    } else {
+      const isDelete = window.confirm(
+        `Estás seguro de eliminar el gif "${title}" de tus favoritos?`
+      );
+      if (isDelete) {
+        handleDeleteFav({ id });
+      }
+    }
   };
 
   const handleClose = () => {
@@ -21,11 +37,12 @@ const Fav = () => {
   const handleLogin = () => {
     setModal(false);
   };
+
   return (
     <>
       <button className="button-fav" onClick={handleClick}>
         <span aria-label="Fav-Gif" role="img">
-          ❤
+          {emojiFav}
         </span>
       </button>
       {modal && (
