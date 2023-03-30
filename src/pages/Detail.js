@@ -19,6 +19,7 @@ const Detail = () => {
     <div className="detail-container">
       <Helmet>
         <title>{`${gif.title} || Gifty`}</title>
+        <meta name="description" content={`Gif ${gif.title} || Gifty`} />
       </Helmet>
       <Gif id={gif.id} title={gif.title} url={gif.url}></Gif>
     </div>
