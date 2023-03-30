@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import useSingleGif from "../hook/useSingleGif";
 import "./Error404.css";
 import Spinner from "../components/Spinner";
+import Form from "../components/Form";
 const Error404 = () => {
   const { gif, loading } = useSingleGif("14uQ3cOFteDaU");
 
@@ -15,9 +16,13 @@ const Error404 = () => {
 
   return (
     <div className="error-container">
-      <h2 className="mb-2">Error404</h2>
+      <Form></Form>
+      <h2>
+        <i>404</i>
+      </h2>
+      <p>Sometimes gettings lost isn´t that bad</p>
       <img className="mb-2" src={url} alt={title}></img>
-      <NavLink className="error-home" to={"/"}>
+      <NavLink className="btn" to={"/"}>
         Regresar a Home
       </NavLink>
     </div>

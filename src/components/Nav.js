@@ -8,6 +8,7 @@ const Nav = () => {
   const navigate = useNavigate();
 
   const match = useMatch("/login");
+  const matchFav = useMatch("/favs");
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -24,7 +25,8 @@ const Nav = () => {
     );
   };
 
-  const Fav = isLoggedIn ? <NavLink to="/favs">Favs</NavLink> : null;
+
+  const Fav = isLoggedIn && !matchFav ? <NavLink to="/favs">Favs</NavLink> : null;
 
   const content = match ? null : Logged({ isLoggedIn });
   return (

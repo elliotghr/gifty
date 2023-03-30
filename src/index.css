@@ -118,7 +118,8 @@ body {
   background-color: #282c34;
 }
 .btn {
-  width: 5rem;
+  width: auto;
+  min-width: 5rem;
   padding: 0.6rem;
   margin-top: 1rem;
   border-radius: 1rem;
