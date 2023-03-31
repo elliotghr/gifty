@@ -10,23 +10,29 @@ const Home = () => {
   const { gifs } = useGif();
 
   return (
-    <div>
+    <>
       <Helmet>
-        <title>Gifty</title>
+        <title>Home || Gifty</title>
       </Helmet>
-      <article className="form-container mb-2">
-        <Form></Form>
-      </article>
-      {lsKeyword ? (
-        <h2> 🔎 Última busqueda: {lsKeyword}</h2>
-      ) : (
-        <h2>Bienvenido a Gifty</h2>
-      )}
-      <ListOfGifs gifs={gifs}></ListOfGifs>
-      <article className="trends-container">
-        <LazyTrends></LazyTrends>
-      </article>
-    </div>
+      <section>
+        <article className="form-container mb-2">
+          <Form></Form>
+        </article>
+        <div className="gifs-n-trends-container">
+          <div>
+            {lsKeyword ? (
+              <h2> 🔎 Última busqueda: {lsKeyword}</h2>
+            ) : (
+              <h2>Bienvenido a Gifty</h2>
+            )}
+            <ListOfGifs gifs={gifs}></ListOfGifs>
+          </div>
+          <article className="trends-container">
+            <LazyTrends></LazyTrends>
+          </article>
+        </div>
+      </section>
+    </>
   );
 };
 

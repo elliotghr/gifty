@@ -106,16 +106,17 @@ h2 {
   max-width: var(--max-width);
   margin: 0 auto;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+}
 /* ********* Utilities ********* */
 .mb-2 {
   margin-bottom: 2rem;
 }
 .mb-5 {
   margin-bottom: 5rem;
-}
-body {
-  padding: 0 1rem;
-  background-color: #282c34;
 }
 .btn {
   width: auto;

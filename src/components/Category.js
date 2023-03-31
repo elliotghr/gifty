@@ -1,18 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Category.css"
+import { TrendsContentUl, TrendsContentLink } from "./CategoryStyle";
 
 const Category = ({ title, data }) => {
   return (
-    <div className="trends-content mb-2">
+    <div className="mb-2">
       <h2 className="mb-2">{title}</h2>
-      <ul>
-        {data.map((el) => (
+      <TrendsContentUl>
+        {data.map((el, index) => (
           <li key={el}>
-            <NavLink to={`/search/${el}`}>{el}</NavLink>
+            <TrendsContentLink index={index} to={`/search/${el}`}>
+              {el}
+            </TrendsContentLink>
           </li>
         ))}
-      </ul>
+      </TrendsContentUl>
     </div>
   );
 };

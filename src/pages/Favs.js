@@ -1,21 +1,17 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import ListOfGifs from "../components/ListOfGifs";
+import Access from "../components/Access";
+import AccessDenied from "../components/AccessDenied";
 import useGlobalFavs from "../hook/useGlobalFavs";
+import { useGlobalUser } from "../hook/useGlobalUser";
 
 const Favs = () => {
   const { favs } = useGlobalFavs();
+  const { isLoggedIn } = useGlobalUser();
+
   if (!favs) return;
 
-  return (
-    <>
-      <Helmet>
-        <title>Favoritos || Gifty</title>
-      </Helmet>
-      <h2>Gifs favoritos</h2>
-      <ListOfGifs gifs={favs}></ListOfGifs>
-    </>
-  );
+  const content = isLoggedIn ? Access({ favs }) : AccessDenied();
+
+  return content;
 };
 
 export default Favs;

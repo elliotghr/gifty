@@ -36,8 +36,9 @@
   max-width: var(--max-width);
   background-color: #282c34;
 }
-input,
-select {
+.form-container input,
+.form-container select,
+.form-container button {
   position: relative;
   padding: 1rem;
   border: 0;
@@ -65,4 +66,13 @@ select {
   min-width: 150px;
   background-color: whitesmoke;
   color: gray;
+}
+.gifs-n-trends-container {
+  display: grid;
+}
+@media screen and (min-width: 900px) {
+  .gifs-n-trends-container {
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+  }
 }

@@ -25,8 +25,8 @@ const Nav = () => {
     );
   };
 
-
-  const Fav = isLoggedIn && !matchFav ? <NavLink to="/favs">Favs</NavLink> : null;
+  const Fav =
+    isLoggedIn && !matchFav ? <NavLink to="/favs">Favoritos</NavLink> : null;
 
   const content = match ? null : Logged({ isLoggedIn });
   return (

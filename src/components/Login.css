@@ -1,11 +1,3 @@
-.form-login-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
 .login-container {
   display: flex;
   flex-direction: column;
@@ -15,12 +7,20 @@
   max-width: 500px;
   margin: 0 auto;
 }
-
+.form-login-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 .form-login-container label {
   color: whitesmoke;
   margin-bottom: 1rem;
 }
 .form-login-container input {
+  padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 2rem;
 }

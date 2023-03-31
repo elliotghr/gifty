@@ -7,8 +7,10 @@ const RATINGS = ["g", "pg", "pg-13", "r"];
 const Form = ({ initialKeyword = "", initialRating = "g" }) => {
   const navigate = useNavigate();
 
-  const { keyword, rating, updateKeyword, updateRating } =
-    useFormReducer({ initialKeyword, initialRating });
+  const { keyword, rating, updateKeyword, updateRating } = useFormReducer({
+    initialKeyword,
+    initialRating,
+  });
 
   const handleChange = (e) => {
     updateKeyword(e.target.value);
@@ -28,12 +30,7 @@ const Form = ({ initialKeyword = "", initialRating = "g" }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        className="input-buscar"
-        type={"submit"}
-        onSubmit={handleSubmit}
-        value="Buscar"
-      ></input>
+      <button className="input-buscar">Buscar</button>
       <input
         className="input-text"
         type="search"
